@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'InterExtraBold';
+  src: url('fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'InterExtraBold';
+  font-weight: 400;
+  color: #000000;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: start;      /* 좌우 정렬은 그대로 */
+  align-items: center;         /* 상하 가운데 정렬 */
+  min-height: 100vh;           /* 높이 기준 */
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: -20px;
+  margin: auto;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-top: 5%;
+  align-self:center;
+}
+
+.title-box h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: -0.05em;
+  margin-left: -10px;
+  margin-top: 20px;
+  color: #000000;
+}
+
+.title-box p {
+  margin: 4px 0 0;
+  font-weight: 500;
+  margin-left: -10px;
+  margin-top: -4px;
+  font-size: 20px;
+  color: #000000;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.table-box {
+  width: 96.3%;
+  height: 74.4%;
+  background-color: rgba(209, 209, 209, 0.49);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  overflow: auto;
+  letter-spacing: -0.3px; /* 원하는 자간값 */
+
+}
+.footer {
+  height: 60px;
+  width:100%;
+}
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 33px 10px; /* 위아래 여백 넉넉하게 */
+  border: none;
+  white-space: nowrap;
+
+}
+th {
+  font-size: 25px;       /* 예: 기존보다 크게 */
+  color: #000;    
+  transform: translateX(1px); /* 왼쪽으로 8px 이동 */
+  /* 검정으로 확실히 보이게 */
+}
+
+
+tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+tbody tr:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td:first-child {
+  font-size: 23px;
+  font-weight: 600;
+  padding-left: 12px;
+}
+.tts-text {
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 2px;  /* 간격 조정 */
+}
+
+.tts-sub {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+
+
+td audio {
+  width: 100%;
+  max-width: 180px;
+}
+
+
+/* ===== MediaElement 스타일 커스터마이징 ===== */
+
+.mejs__container,
+.mejs__controls,
+.mejs__controls .mejs__button,
+.mejs__controls .mejs__time,
+.mejs__time-rail,
+.mejs__time-total,
+.mejs__time-buffering,
+.mejs__time-loaded,
+.mejs__time-current,
+.mejs__currenttime-container,
+.mejs__duration-container,
+.mejs__time-float,
+.mejs__time-float-current,
+.mejs__time-float-corner {
+  background: rgba(245, 244, 244, 0.877) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  
+}
+
+
+.mejs__container {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.mejs__button > button,
+.mejs__button > button::before,
+.mejs__time,
+.mejs__currenttime,
+.mejs__duration {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+.mejs__time-total {
+  background: #eee !important;
+}
+
+.mejs__time-loaded,
+.mejs__time-current {
+  background: #000 !important;
+}
+
+.mejs__time-handle {
+  background: #000 !important;
+  border-radius: 50% !important;
+  width: 10px !important;
+  height: 10px !important;
+  top: -2px !important;
+}
+
+.table-box audio {
+  max-width: 100%;
+}
+
+.mejs__play > button,
+.mejs__pause > button {
+  filter: brightness(0);
+}
+
+.mejs__time-total,
+.mejs__time-loaded,
+.mejs__time-current {
+  border-radius: 999px !important;
+  height: 6px !important;
+}
+/* 일시정지 버튼 아이콘 검정색으로 변경
+.mejs__pause > button {
+  background-color: #000 !important;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mejs-controls.svg") !important;
+  -webkit-mask-position: -20px 0 !important;
+  -webkit-mask-size: 240px 20px !important;
+  -webkit-mask-repeat: no-repeat !important;
+
+  mask-image: url("https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mejs-controls.svg") !important;
+  mask-position: -20px 0 !important;
+  mask-size: 240px 20px !important;
+  mask-repeat: no-repeat !important;
+} */

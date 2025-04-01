@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AntiFake-NMR</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- MediaElement CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelementplayer.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="title-box">
+        <h1>AntiFake-NMR</h1>
+        <p>Click play to see how it works!</p>
+      </div>
+      <img src="logo.png" alt="AISRC Logo" class="logo" />
+    </header>
+    <div class="container">
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Donald Trump</th>
+              <th>Emma Stone</th>
+              <th>Jennie Kim</th>
+              <th>Tom Holland</th>
+              <th>Joe Biden</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>original</td>
+              <td><audio class="mejs__player" src="audio/trump_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/emma_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/jennie_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/tom_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/biden_original.wav" controls></audio></td>
+            </tr>
+            <tr>
+              <td>protected</td>
+              <td><audio class="mejs__player" src="audio/trump_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/emma_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/jennie_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/tom_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/biden_protected.wav" controls></audio></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="tts-text">TTS</div>
+                <div class="tts-sub">from original</div>
+              </td>            
+              <td><audio class="mejs__player" src="audio/trump_tts_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/emma_tts_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/jennie_tts_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/tom_tts_original.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/biden_tts_original.wav" controls></audio></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="tts-text">TTS</div>
+                <div class="tts-sub">from protected</div>
+              </td>            
+              <td><audio class="mejs__player" src="audio/trump_tts_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/emma_tts_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/jennie_tts_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/tom_tts_protected.wav" controls></audio></td>
+              <td><audio class="mejs__player" src="audio/biden_tts_protected.wav" controls></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+
+
+  <!-- MediaElement JS -->
+  <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelement-and-player.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(audio => {
+        new MediaElementPlayer(audio, {
+          features: ['playpause', 'progress', 'current', 'duration'],
+          audioWidth: 250,
+          audioHeight: 40
+        });
+      });
+    });
+  </script>
+</body>
+</html>
