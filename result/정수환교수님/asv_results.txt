@@ -1,0 +1,3 @@
+Final ASV Score:
+ - Score source vs protected: 0.9742505550384521
+ - Score source vs TTS Tor from protected: 0.035169363021850586
